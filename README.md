@@ -20,8 +20,7 @@ Different Linux desktop environments handle panels, docks, and launchers through
 ## Supported Environments & Backends
 
 * **KDE Plasma (5 & 6):** Fully supported via D-Bus script evaluation.
-* **GNOME Shell:** Supported via extension settings integration.
-* **XFCE & Generic Docks:** Supported via standard desktop shortcut manipulation and process monitoring.
+* **GNOME Shell / XFCE / Outras DEs:** Caso a sua Interface Gráfica (DE) não apareça na lista acima, **provavelmente está em desenvolvimento ou ainda não possui suporte oficial.** Fique à vontade para abrir uma issue ou contribuir!
 
 ---
 
@@ -34,26 +33,11 @@ Different Linux desktop environments handle panels, docks, and launchers through
 
 ## Installation & Usage
 
-1. **Clone or download the repository and make the script executable:**
-   ```bash
-   chmod +x "system-tray-broken.sh"
-
-```
-
-2. **Run the interactive setup wizard:**
-```bash
-./"system-tray-broken.sh"
-
-```
-
-
-3. **Follow the interactive prompts:**
-* Enter the **exact app name** (e.g., `nerimity`).
-* Enter the **full path to the executable or AppImage** (e.g., `/opt/Nerimity/nerimity-desktop`).
-* Choose your preferred positioning or dock behavior based on your detected desktop environment.
-
-
-4. **All set!** Launch your application normally from your system menu. The icon will appear while running and disappear automatically upon exit.
+1. **Baixe ou acesse o repositório e baixe a versão do script (`.sh`) correspondente à sua DE.**
+2. **Abra o seu terminal.**
+3. **Arraste o arquivo `.sh` baixado diretamente para dentro da janela do terminal e aperte `Enter`.**
+4. Siga as instruções interativas que aparecerão na tela para informar o nome do app, caminho do executável e a posição desejada.
+5. Pronto! Abra o aplicativo normalmente pelo menu iniciar. O ícone aparecerá enquanto o app estiver aberto e sumirá automaticamente ao fechar.
 
 ---
 
@@ -66,9 +50,5 @@ Different Linux desktop environments handle panels, docks, and launchers through
 
 ## Credits
 
-* **Conception, architecture, testing, and multi-DE vision:** [kayronn](https://www.google.com/search?q=https://github.com/kayronn)
+* **Conception, architecture, testing, and multi-DE vision:** [kayronn](https://github.com/kayronn)
 * **Code development, D-Bus/QML engine mapping, and cross-desktop logic:** **Gemini** (Google AI)
-
-```
-
-```
