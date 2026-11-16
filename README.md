@@ -1,4 +1,3 @@
-```markdown
 # System Tray Linux Broken (KDE Plasma 6 Dynamic Widget Manager)
 
 A Bash and D-Bus (`qdbus6`) utility built for **KDE Plasma 6** that automates the lifecycle of panel icons for applications lacking native or functional System Tray support on Linux—such as Electron clients, AppImages, or packaged web apps (e.g., Nerimity, Discord, Spotify).
