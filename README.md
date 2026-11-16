@@ -1,53 +1,53 @@
-# System Tray Linux Broken (Cross-Desktop App Lifecycle & Dock Manager)
+# Bandeira do sistema Linux quebrada (ciclo de vida do aplicativo entre desktops e gerador de dock)
 
-A cross-desktop utility for Linux that automates the lifecycle of application shortcuts and dock/panel icons. It is designed for applications that lack native or functional tray integration, persistent pinning, or proper lifecycle management (such as Electron clients, AppImages, and packaged web apps like Nerimity, Discord, or Spotify).
+Um utilitário cross-desktop para Linux que automatiza o ciclo de vida de atalhos de aplicativos e ícones de dock/painel. Ele foi projetado para aplicativos que não possuem integração de banda natural ou funcional, fixação persistente ou gerenciamento adequado do ciclo de vida (como clientes Electron, AppImages e aplicativos da web empregados como Nerimity, Discord ou Spotify).
 
-When you launch the app, the utility dynamically injects a shortcut into your active desktop environment's panel or dock. As soon as the application process exits, the shortcut is cleanly removed, keeping your workspace uncluttered.
-
----
-
-## How It Works
-
-Different Linux desktop environments handle panels, docks, and launchers through entirely different APIs and configuration structures. Therefore, the project provides dedicated script versions for each environment to handle injection, positioning, and cleanup natively:
-
-1. **KDE Plasma:** Interacts with the Plasma QML engine and D-Bus (`qdbus6`) to inject and position panel icon widgets relative to the System Tray.
-2. **GNOME Shell / XFCE / Other DEs:** Interacts with respective panel configurations or extension schemas.
-3. **Transparent Wrapper:** Generates a local `.desktop` wrapper in `~/.local/share/applications/` pointing to a background monitor script (`-launcher.sh`) that tracks the application's PID.
+Quando você inicia o aplicativo, o utilitário injeta dinamicamente um atalho no painel ou dock do seu ambiente de trabalho ativo. Assim que o processo de inscrição termina, o atalho é removido de forma limpa, mantendo seu espaço de trabalho organizado.
 
 ---
 
-## Supported Environments & Backends
+## Como função
 
-* **KDE Plasma (5 & 6):** Fully supported (`system-tray-broken-kde.sh`).
-* **GNOME Shell / XFCE / Other DEs:** If your Desktop Environment is not listed, **it is likely under development or not yet supported.** Feel free to open an issue or contribute!
+Diferentes ambientes de desktop Linux lidam com dores, docks e inicializadores por meio de APIs e estruturas de configuração totalmente diferentes. Portanto, o projeto fornece versões de script dedicadas para cada ambiente para lidar com injecção, posição e limpeza nativamente:
 
----
-
-## Prerequisites
-
-* **Environment:** Linux with a supported Desktop Environment / Window Manager.
-* **Tools:** `bash`, `pgrep` (`procps-ng`), `desktop-file-utils` (`update-desktop-database`), and environment-specific tools (e.g., `qdbus6` for KDE).
+1. **Plasma do KDE:** Interage com o motor Plasma QML e D-Bus (`qdbus6`) para injetar e posicionar widgets de ícones do papel em relação à Bandeja do Sistema.
+2. **GNOME Shell / XFCE / Outros DEs:** Interage com as respectivas configurações de dor ou esquemas de extensão.
+3. **Invólucro transparente:** Gera um local `.área de trabalho` embrulhar em `~/.local/compartilhar/aplicativos/` apontando para um script de monitor em segundo plano (`-lançador.sh`) que rastreia o PID do aplicativo.
 
 ---
 
-## Installation & Usage
+## Ambientes e backends suportados
 
-1. **Download the `.sh` script version corresponding to your Desktop Environment.**
-2. **Open your terminal.**
-3. **Drag and drop the downloaded `.sh` file directly into the terminal window and press `Enter`.**
-4. Follow the interactive prompts in your terminal to enter the app name, executable path, and preferred position.
-5. All set! Launch your application normally from your system menu. The icon will appear while running and disappear automatically upon exit.
+* **Plasma KDE (5 e 6):** Totalmente suportado (`bandeira do sistema quebrada-kde.sh`).
+* **GNOME Shell / XFCE / Outros DEs:** Se o seu ambiente de trabalho não está listado, **provavelmente está em desenvolvimento ou ainda não tem suporte.** Sinta-se à vontade para abrir uma edição ou contribuir!
 
 ---
 
-## Generated File Structure
+## Pré-requisitos
 
-* `~/.local/bin/<app>-launcher.sh` — The background wrapper script that handles the runtime lifecycle, process monitoring (PID), and dynamic widget/icon insertion/removal.
-* `~/.local/share/applications/<app>.desktop` — The updated local desktop entry routing application launches through your custom lifecycle manager.
+* **Meio Ambiente:** Linux com ambiente de trabalho / gerador de janelas suportadas.
+* **Ferramentas:** `batedor`, `pgrep` (`procps-ng`), `utilitários de arquivo de desktop` (`atualizar-banco-de-dados-da-desktop`) e ferramentas específicas do ambiente (por exemplo, `qdbus6` para o KDE).
 
 ---
 
-## Credits
+## Instalação e uso
 
-* **Conception, architecture, testing, and multi-DE vision:** [kayronn](https://github.com/kayronn)
-* **Code development, D-Bus/QML engine mapping, and cross-desktop logic:** **Gemini** (Google AI)
+1. **Baixa o `.sh` versão do roteiro correspondente ao seu ambiente de trabalho.**
+2. **Terminal Abra seu.**
+3. **Arraste e solte o baixado `.sh` arquive diretamente na janela do terminal e impressão `Entrar`.**
+4. Siga como instruções interativas no seu terminal para inserir o nome do aplicativo, o caminho do executável e a posição preferida.
+5. Tudo pronto! Inicie seu aplicativo normalmente sem menu do sistema. O ícone aparecerá durante a execução e desaparecerá automaticamente ao sair.
+
+---
+
+## Estrutura de arquivo gerada
+
+* `~/.local/bin/<app>-launcher.sh` — O script wrapper em segundo plano que manipula o ciclo de vida do tempo de execução, o monitoramento de processos (PID) e a inserção/remoção dinâmica de widgets/ícones.
+* `~/.local/compartilhar/aplicativos/<aplicativo>.desktop` — O aplicativo de roteamento de entrada de desktop local atualizado é iniciado por meio do seu gerador de ciclo de vida personalizado.
+
+---
+
+## Créditos
+
+* **Concepção, arquitetura, testes e visão multi-DE:** Kayronn monteiro
+* **Desenvolvimento de código, mapeamento de mecanismo D-Bus/QML e lógica entre desktops:** **Gêmeos** (Google IA)
