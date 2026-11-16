@@ -20,7 +20,7 @@ Different Linux desktop environments handle panels, docks, and launchers through
 ## Supported Environments & Backends
 
 * **KDE Plasma (5 & 6):** Fully supported via D-Bus script evaluation.
-* **GNOME Shell / XFCE / Outras DEs:** Caso a sua Interface Gráfica (DE) não apareça na lista acima, **provavelmente está em desenvolvimento ou ainda não possui suporte oficial.** Fique à vontade para abrir uma issue ou contribuir!
+* **GNOME Shell / XFCE / Other DEs:** If your Desktop Environment is not listed above, **it is likely under development or not yet supported.** Feel free to open an issue or contribute!
 
 ---
 
@@ -33,11 +33,11 @@ Different Linux desktop environments handle panels, docks, and launchers through
 
 ## Installation & Usage
 
-1. **Baixe ou acesse o repositório e baixe a versão do script (`.sh`) correspondente à sua DE.**
-2. **Abra o seu terminal.**
-3. **Arraste o arquivo `.sh` baixado diretamente para dentro da janela do terminal e aperte `Enter`.**
-4. Siga as instruções interativas que aparecerão na tela para informar o nome do app, caminho do executável e a posição desejada.
-5. Pronto! Abra o aplicativo normalmente pelo menu iniciar. O ícone aparecerá enquanto o app estiver aberto e sumirá automaticamente ao fechar.
+1. Download the `.sh` script version corresponding to your Desktop Environment.
+2. Open your terminal.
+3. **Drag and drop the downloaded `.sh` file directly into the terminal window and press `Enter`.**
+4. Follow the interactive prompts in your terminal to enter the app name, executable path, and preferred position.
+5. All set! Launch your application normally from your system menu. The icon will appear while running and disappear automatically upon exit.
 
 ---
 
