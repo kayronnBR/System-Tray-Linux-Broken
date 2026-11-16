@@ -1,4 +1,3 @@
-```markdown
 # System Tray Linux Broken (Cross-Desktop App Lifecycle & Dock Manager)
 
 A cross-desktop utility for Linux that automates the lifecycle of application shortcuts and dock/panel icons. It is designed for applications that lack native or functional tray integration, persistent pinning, or proper lifecycle management (such as Electron clients, AppImages, and packaged web apps like Nerimity, Discord, or Spotify).
