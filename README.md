@@ -8,19 +8,18 @@ When you launch the app, the utility dynamically injects a shortcut into your ac
 
 ## How It Works
 
-Different Linux desktop environments handle panels, docks, and launchers through entirely different APIs and configuration structures. This project uses a **multi-backend architecture** that detects your active Desktop Environment (`$XDG_CURRENT_DESKTOP`) and applies the appropriate method:
+Different Linux desktop environments handle panels, docks, and launchers through entirely different APIs and configuration structures. Therefore, the project provides dedicated script versions for each environment to handle injection, positioning, and cleanup natively:
 
 1. **KDE Plasma:** Interacts with the Plasma QML engine and D-Bus (`qdbus6`) to inject and position panel icon widgets relative to the System Tray.
-2. **GNOME Shell:** Interacts with extension schemas (like *Dash to Dock*) or `gsettings` to manage favorite application pinned lists dynamically.
-3. **XFCE / Generic Docks:** Manages panel launcher configurations or standalone dock items (such as Plank) to handle runtime visibility.
-4. **Transparent Wrapper:** Generates a local `.desktop` wrapper in `~/.local/share/applications/` pointing to a background monitor script (`-launcher.sh`) that tracks the application's PID.
+2. **GNOME Shell / XFCE / Other DEs:** Interacts with respective panel configurations or extension schemas.
+3. **Transparent Wrapper:** Generates a local `.desktop` wrapper in `~/.local/share/applications/` pointing to a background monitor script (`-launcher.sh`) that tracks the application's PID.
 
 ---
 
 ## Supported Environments & Backends
 
-* **KDE Plasma (5 & 6):** Fully supported via D-Bus script evaluation.
-* **GNOME Shell / XFCE / Other DEs:** If your Desktop Environment is not listed above, **it is likely under development or not yet supported.** Feel free to open an issue or contribute!
+* **KDE Plasma (5 & 6):** Fully supported (`system-tray-broken-kde.sh`).
+* **GNOME Shell / XFCE / Other DEs:** If your Desktop Environment is not listed, **it is likely under development or not yet supported.** Feel free to open an issue or contribute!
 
 ---
 
@@ -33,8 +32,8 @@ Different Linux desktop environments handle panels, docks, and launchers through
 
 ## Installation & Usage
 
-1. Download the `.sh` script version corresponding to your Desktop Environment.
-2. Open your terminal.
+1. **Download the `.sh` script version corresponding to your Desktop Environment.**
+2. **Open your terminal.**
 3. **Drag and drop the downloaded `.sh` file directly into the terminal window and press `Enter`.**
 4. Follow the interactive prompts in your terminal to enter the app name, executable path, and preferred position.
 5. All set! Launch your application normally from your system menu. The icon will appear while running and disappear automatically upon exit.
